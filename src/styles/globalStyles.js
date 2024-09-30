@@ -25,4 +25,10 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 20px;
     max-width: 100%;
  }
+
+ @media (max-width: 660px) {
+   .container {
+      flex-direction: column;
+   }
+ }
 `;

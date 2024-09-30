@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 300px;
   gap: 10px;
-  border: 1px solid #DCDCDC;
+  border: 1px solid #dcdcdc;
   padding: 20px;
-  max-height: 390px;
+  height: max-content;
 
   .input-box {
     display: flex;
@@ -21,7 +20,7 @@ export const StyledForm = styled.form`
     align-items: center;
   }
 
-  .input-box input {
+  input {
     height: 30px;
     border-radius: 6px;
     padding: 0 10px;
@@ -33,6 +32,24 @@ export const StyledForm = styled.form`
     display: flex;
     gap: 5px;
     cursor: default;
+  }
+
+  .input-name {
+    border-color: ${(props) => (props.errorsName ? "#ff0000" : "#696969")};
+  }
+
+  .input-description {
+    border-color: ${(props) =>
+      props.errorsDescription ? "#ff0000" : "#696969"};
+  }
+
+  .input-value {
+    border-color: ${(props) => (props.errorsValue ? "#ff0000" : "#696969")};
+  }
+
+  .erro-input {
+    color: #ff0000;
+    font-size: 14px;
   }
 
   .input-box div > input {
@@ -47,9 +64,13 @@ export const StyledForm = styled.form`
     border-radius: 4px;
 
     &:hover {
-        background-color: #202020;
-        color: #ffffff;
-        transition: 0.2s ease-in;
+      background-color: #202020;
+      color: #ffffff;
+      transition: 0.2s ease-in;
     }
+  }
+
+  @media (min-width: 660px) {
+    width: 350px;
   }
 `;
